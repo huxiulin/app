@@ -19,6 +19,30 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  ##网络链接
+  connectivity: ^0.4.2
+  ##加载网络图片并本地缓存
+  #cached_network_image: ^0.5.1
+  #  ##存储
+  shared_preferences: ^0.4.3
+  #  ##网络请求
+  dio: ^2.0.14
+  #  ##路由
+  fluro: ^1.4.0
+  #  ##时间戳转换
+  timeago: ^2.0.10
+  #  ##状态管理
+  scoped_model: ^1.0.1
+  #  ##事件队列
+  event_bus: ^1.0.3
+  #  ##微光效果控件
+  shimmer: ^1.0.0
+  #  ##toast提示
+  fluttertoast: ^3.0.1
+  ##加载等待框
+  flutter_spinkit: ^3.1.0
+  ##瀑布流展示控件
+  flutter_staggered_grid_view: ^0.2.7
 
 dev_dependencies:
   flutter_test:
