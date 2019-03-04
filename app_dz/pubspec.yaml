@@ -26,7 +26,7 @@ dependencies:
   #  ##存储
   shared_preferences: ^0.4.3
   #  ##网络请求
-  dio: ^2.0.14
+  dio: ^1.0.1
   #  ##路由
   fluro: ^1.4.0
   #  ##时间戳转换

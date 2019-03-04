@@ -10,10 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:app_dz/models/state_models/index_state_model.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:event_bus/event_bus.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-
 import 'package:app_dz/constants/theme.dart';
 import 'package:app_dz/component/home/home_page.dart';
 

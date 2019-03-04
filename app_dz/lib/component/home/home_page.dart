@@ -5,19 +5,14 @@
 * */
 
 
-
-
-import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:app_dz/constants/index_tab.dart';
-
-
-import 'package:app_dz/models/state_models/tab_state_model.dart';
 import 'movie/movie.dart';
 import 'mine/mine.dart';
 import 'index/index.dart';
 import 'popular/popular.dart';
-
+import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:app_dz/constants/index_tab.dart';
+import 'package:app_dz/models/state_models/tab_state_model.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -102,7 +97,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
 
 
   /*
-  * 底部icon图标
+  * BottomIcon
   * */
 
   Image _getBottomNavigateIcon(index , currentIndex) {
@@ -113,8 +108,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
   }
 
   /*
-    * 底部文字
-    * */
+  * BottomText
+  * */
 
   Text _getBottomNavigateTitle(index , currentIndex) {
     return Text(tabTitle[index], style: TextStyle(color: index == currentIndex ? Colors.blue : Colors.grey[500]));
