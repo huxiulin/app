@@ -27,7 +27,7 @@ class _MinePageState extends State<MinePage> with SingleTickerProviderStateMixin
         title: Text('我的'),
       ),
       body: new Container(
-        child: Text('2222'),
+        child: Text('4444'),
       ),
     );
   }

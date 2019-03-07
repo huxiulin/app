@@ -43,10 +43,14 @@ dependencies:
   flutter_spinkit: ^3.1.0
   ##瀑布流展示控件
   flutter_staggered_grid_view: ^0.2.7
+  #json模版
+  json_annotation: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  json_serializable: ^2.0.2
 
 
 # For information on the generic Dart part of this file, see the

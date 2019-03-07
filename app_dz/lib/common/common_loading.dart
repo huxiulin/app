@@ -9,7 +9,7 @@
   import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
-  class ProgressDialog extends StatelessWidget {
+  class CommonLoading extends StatelessWidget {
 
 
     @override

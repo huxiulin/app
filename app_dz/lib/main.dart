@@ -4,15 +4,18 @@
  *
  */
 
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-//import 'package:fluro/fluro.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:event_bus/event_bus.dart';
+import 'package:app_dz/route/router.dart';
+import 'package:app_dz/constants/theme.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:app_dz/models/state_models/index_state_model.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:app_dz/constants/theme.dart';
+import 'package:app_dz/config/Application.dart';
 import 'package:app_dz/component/home/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app_dz/models/state_models/index_state_model.dart';
 
 
 void main() async {
@@ -52,6 +55,12 @@ class _AppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    Application.eventBus = EventBus();
+    //初始化并配置路由
+    final Router router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+
     indexStateModel = IndexStateModel();
   }
 
@@ -105,6 +114,7 @@ class _AppState extends State<MyApp> {
                   primaryColor: themeList[model.themeIndex != null ? model.themeIndex : widget.themeIndex],
                 ),
                 home: HomePage(),
+                onGenerateRoute: Application.router.generator,
               );
             }
         )

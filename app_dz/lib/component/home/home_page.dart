@@ -59,9 +59,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       index: model.tabBarCurrentIndex,
       children: <Widget>[
         IndexPage(),
-        MinePage(),
+        PopularStatePage(),
         MovieStatePage(),
-        PopularStatePage()
+        MinePage(),
       ],
     );
 

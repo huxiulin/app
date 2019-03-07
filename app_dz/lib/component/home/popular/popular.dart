@@ -24,10 +24,10 @@ class _PopularStatePage extends State<PopularStatePage> with SingleTickerProvide
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('电影'),
+        title: Text('精选'),
       ),
       body: new Container(
-        child: Text('33333'),
+        child: Text('2222'),
       ),
     );
   }
