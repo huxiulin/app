@@ -4,8 +4,6 @@
   *
   * */
 
-//  import 'package:json_annotation/json_annotation.dart';
-//  import 'package:json_serializable/json_serializable.dart';
 
   class IndexTableModel {
 
@@ -16,7 +14,7 @@
 
     factory IndexTableModel.fromJson(Map<String , dynamic> params) {
       return new IndexTableModel(
-        id: params['id'],
+        id: params['_id'],
         name: params['name']
       );
     }

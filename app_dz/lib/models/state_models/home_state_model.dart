@@ -15,8 +15,7 @@
 
   class HomeStateModel extends BaseStateModel {
 
-    Status _status  = Status.READY;
-
+    Status _status  = Status.LOADING;
     Status get status => _status;
 
     Map<String, List<Hot>> hotMap = Map();
@@ -25,16 +24,15 @@
     List<IndexTableModel> _tabList;
     List<IndexTableModel> get tabList => _tabList;
 
+    IndexTabPageModel _IndexTabPageModel;
+    IndexTabPageModel get indexTabPageModel => _IndexTabPageModel;
 
-    IndexTabPageModel _indexTabPageModel;
-    IndexTabPageModel get indexTabPageModel => _indexTabPageModel;
 
 
-    fetchTabList() async{
+    fetchTabBarList() async{
       _status = Status.LOADING;
       await HttpUtil.get(Api.INDEX_TAB_URL, null)
           .then((res){
-            print(res);
             _tabList = List();
             if(res.statusCode == Response.SUCCESS){
               _status = Status.SUCCESS;
@@ -60,6 +58,35 @@
           })
           .whenComplete(this.notifyListeners);
     }
+
+
+    fetchTabDataList(id) async {
+      _status = Status.LOADING;
+      Map<String,String> params = new Map();
+      params['id'] = id;
+      await HttpUtil.get(Api.INDEX_LIST, params)
+      .then((res) {
+        if(res.statusCode == Response.SUCCESS) {
+          _status = Status.SUCCESS;
+          var responseList = res.data;
+          if(responseList != null ){
+            _IndexTabPageModel = IndexTabPageModel.fromJson(responseList);
+            hotMap.addAll({ id: _IndexTabPageModel.payload.hots });
+          }else{ 
+            _status = Status.NO_RESULT;
+          }
+        }else{
+          _status = Status.NO_RESULT;
+        }
+      })
+      .catchError((onError) {
+        print(onError.toString());
+        _status = Status.ERROR;
+      })
+      .whenComplete(this.notifyListeners);
+    }
+
+
 
 //    static HomeModel.of(context) => ScopedModel.of<HomeModel>(context, rebuildOnChange: true);
   }
