@@ -21,8 +21,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   ##网络链接
   connectivity: ^0.4.2
-  ##加载网络图片并本地缓存
-  #cached_network_image: ^0.5.1
+  #上拉 下拉
+  pull_to_refresh: ^1.1.6
+  flutter_refresh: ^0.0.2
   #  ##存储
   shared_preferences: ^0.4.3
   #  ##网络请求
@@ -45,6 +46,8 @@ dependencies:
   flutter_staggered_grid_view: ^0.2.7
   #json模版
   json_annotation: ^2.0.0
+  #图片缓存
+  cached_network_image: ^0.5.1
 
 dev_dependencies:
   flutter_test:

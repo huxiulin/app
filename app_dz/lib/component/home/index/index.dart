@@ -12,6 +12,8 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:app_dz/models/state_models/home_state_model.dart';
 import 'package:app_dz/common/common_empty.dart';
 import 'package:app_dz/common/common_loading.dart';
+import 'package:app_dz/common/common_refresh.dart';
+import 'package:flutter_refresh/flutter_refresh.dart';
 import '../index/index_tab_page.dart';
 import 'package:app_dz/common/status.dart';
 
@@ -100,15 +102,40 @@ class _IndexPageState extends State<IndexPage> with SingleTickerProviderStateMix
 //  根据切换的tab显示不同的界面
   _renderBodyTabView(HomeStateModel model) {
     return Expanded(
-        child: TabBarView(
+//        child: new Refresh(
+//          onFooterRefresh: onFooterRefresh,
+//          onHeaderRefresh: onHeaderRefresh,
+//          childBuilder: (BuildContext context, {ScrollController controller, ScrollPhysics physics}){
+//            return TabBarView(
+//              children: List.generate(model.tabList == null ? 0 : model.tabList.length, (index){
+//                return IndexTabPage(index: index, categoryId: model.tabList[index].id, name: model.tabList[index].name, stateModel: model);
+//              }),
+//              controller: _tabController,
+//              physics: physics,
+//            );
+//          },
+//        ),
+      child: TabBarView(
           children: List.generate(model.tabList == null ? 0 : model.tabList.length, (index){
             return IndexTabPage(index: index, categoryId: model.tabList[index].id, name: model.tabList[index].name, stateModel: model);
           }),
           controller: _tabController,
-        )
+          )
     );
   }
 
+  Future<Null> onFooterRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {});
+    });
+  }
+
+
+  Future<Null> onHeaderRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {});
+    });
+  }
 
   @override
   bool get wantKeepAlive => true;
