@@ -15,11 +15,12 @@
     @override
     Widget build(BuildContext context) {
     // TODO: implement build
-      return SpinKitFadingCircle(
+      return SpinKitChasingDots(
         itemBuilder: (_, int index) {
           return DecoratedBox(
             decoration: new BoxDecoration(
-              color: index.isEven ? Colors.red : Colors.blue,
+//              color: index.isEven ? Colors.red : Colors.blue,
+              color: Colors.blue,
             ),
           );
         },

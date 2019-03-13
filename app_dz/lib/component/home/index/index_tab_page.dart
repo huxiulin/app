@@ -5,11 +5,10 @@
   *
   * */
 
-
-
-
   import 'package:flutter/material.dart';
+  import 'package:app_dz/route/router.dart';
   import 'package:app_dz/common/status.dart';
+  import 'package:app_dz/config/Application.dart';
   import 'package:scoped_model/scoped_model.dart';
   import 'package:app_dz/common/empty_data_component.dart';
   import 'package:app_dz/common/hero_cache_component.dart';
@@ -56,13 +55,13 @@
     _renderBody(HomeStateModel model) {
 //      print(model.hotMap[widget.categoryId]);
 
-//      return model.status == Status.LOADING ? CommonLoading() : model.status == Status.SUCCESS ? _renderListView(model.hotMap[widget.categoryId]) : EmptyComponent(status: model.status);
-      return _renderListView(model.hotMap[widget.categoryId] == null ? [] : model.hotMap[widget.categoryId]);
+      return model.status == Status.LOADING ? CommonLoading() : model.status == Status.SUCCESS ? _renderListView(model.hotMap[widget.categoryId]) : EmptyComponent(status: model.status);
+//      return _renderListView(model.hotMap[widget.categoryId] == null ? [] : model.hotMap[widget.categoryId]);
     }
 
     _renderListView(List<Hot> list) {
 
-      if(list.length != null) {
+      if(list != null) {
         return StaggeredGridView.countBuilder(
             crossAxisCount: 4,
             itemBuilder: (BuildContext context, int index) => _ItemComponent(itemData: list[index]),
@@ -153,8 +152,9 @@
                   Hot video = itemData;
 //                  Application.navigateTo(
 //                      context: context,
-//                      route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&thumbnail=${Uri.encodeComponent(video.thumbnail)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generatedAt}"
+//                      route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&thumbnail=${Uri.encodeComponent(video.thumbnail)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generated_at}"
 //                  );
+                  Application.navigateTo(context: context, route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generated_at}");
                 },
               )
           )
