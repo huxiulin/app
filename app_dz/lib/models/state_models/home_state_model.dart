@@ -9,7 +9,6 @@
   import 'package:app_dz/models/state_models/base_state_model.dart';
   import 'package:app_dz/utils/http_utils.dart';
   import 'package:app_dz/http/api.dart';
-  import 'package:scoped_model/scoped_model.dart';
   import 'package:app_dz/models/pood/index_tab_model.dart';
   import 'package:app_dz/models/pood/index_tab_page.dart';
 

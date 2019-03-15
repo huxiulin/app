@@ -14,4 +14,7 @@
 
     // 分类对应列表
     static const String VIDEO_LIST_URL = "https://dd.shmy.tech/api/client/classification/";
+
+    // 视频详情
+    static const String VIDEO_URL = "https://dd.shmy.tech/api/client/video/";
   }

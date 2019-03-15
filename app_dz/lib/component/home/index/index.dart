@@ -12,8 +12,6 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:app_dz/models/state_models/home_state_model.dart';
 import 'package:app_dz/common/common_empty.dart';
 import 'package:app_dz/common/common_loading.dart';
-import 'package:app_dz/common/common_refresh.dart';
-import 'package:flutter_refresh/flutter_refresh.dart';
 import '../index/index_tab_page.dart';
 import 'package:app_dz/common/status.dart';
 
