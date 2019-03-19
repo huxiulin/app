@@ -12,7 +12,7 @@
   class Routes {
 
     static String root = '/';
-    static String videoDetail = '/VideoDetial';
+    static String videoDetail = '/videoDetail';
 
 
 

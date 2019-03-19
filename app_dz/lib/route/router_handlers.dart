@@ -11,24 +11,22 @@
 
 
   var videoDetailRouteHandler = Handler(
-    handlerFunc: (BuildContext context, Map<String,List<String>> params) {
-
-      String id = params['_id']?.first;
-      String timestamp = params["timestamp"]?.first;
-      String thumbnail = params["thumbnail"]?.first;
-      String name = params["name"]?.first;
-      String latest = params["latest"]?.first;
-      String generatedAt = params["generatedAt"]?.first;
-      print('$name-----------');
-      return VideoDetailPage(
-        videoItem : VideoModel(
-          id: id,
-          timestamp: timestamp,
-          thumbnail: thumbnail,
-          name: name,
-          latest: latest,
-          generatedAt: generatedAt
-        )
-      );
-    }
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+        String id = params["id"]?.first;
+        String timestamp = params["timestamp"]?.first;
+        String thumbnail = params["thumbnail"]?.first;
+        String name = params["name"]?.first;
+        String latest = params["latest"]?.first;
+        String generatedAt = params["generatedAt"]?.first;
+        return VideoDetailPage(
+            videoItem: VideoModel(
+              id: id,
+              generatedAt: generatedAt,
+              name: name,
+              latest: latest,
+              thumbnail: thumbnail,
+              timestamp: timestamp,
+            )
+        );
+      }
   );

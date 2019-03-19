@@ -101,10 +101,10 @@
               child: HeroComponent(itemData:  VideoModel(
                   id:itemData.id,
                   thumbnail: itemData.thumbnail,
-                  generatedAt: itemData.generated_at,
+                  generatedAt: itemData.generatedAt,
                   latest: itemData.latest
               ))),
-          // 集数
+          // 集数generated_at
           Positioned(
             top: 0.0,
             left: 0.0,
@@ -150,11 +150,11 @@
                 onPressed: () {
                   //  跳转视频详情
                   Hot video = itemData;
-//                  Application.navigateTo(
-//                      context: context,
-//                      route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&thumbnail=${Uri.encodeComponent(video.thumbnail)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generated_at}"
-//                  );
-                  Application.navigateTo(context: context, route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generated_at}");
+                  Application.navigateTo(
+                      context: context,
+                      route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&thumbnail=${Uri.encodeComponent(video.thumbnail)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generatedAt}"
+                  );
+//                  Application.navigateTo(context: context, route: "${Routes.videoDetail}?name=${Uri.encodeComponent(video.name)}&timestamp=${null}&id=${video.id}&latest=${Uri.encodeComponent(video.latest)}&generatedAt=${video.generatedAt}");
                 },
               )
           )

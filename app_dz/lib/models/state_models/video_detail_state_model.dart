@@ -25,8 +25,6 @@
     VideoDetailModel get videoDetailModel => _videoDetailModel;
 
     fetchVideoDetail(String videoId) {
-      print(videoId);
-
       _status = Status.LOADING;
       HttpUtil.get(Api.VIDEO_URL + videoId, null)
           .then((res) {

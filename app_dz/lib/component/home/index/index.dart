@@ -88,7 +88,6 @@ class _IndexPageState extends State<IndexPage> with SingleTickerProviderStateMix
                 controller: _tabController,
                 labelColor: Color.fromARGB(255, 51, 51, 51),
                 unselectedLabelColor: Color.fromARGB(255,192, 193, 195),
-//              indicator: TabBarIndictorComponent(context: context,bgColor: Theme.of(context).primaryColor),
                 tabs: model.tabList == null ? [] : model.tabList.map<Tab>((tab) => Tab(text: tab.name)).toList(),
               )
           )

@@ -34,11 +34,9 @@
     void initState() {
       // TODO: implement initState
       super.initState();
+      print(widget.videoItem.thumbnail);
       videoDetailStateModel = new VideoDetailStateModel();
-
       videoDetailStateModel.fetchVideoDetail(widget.videoItem.id);
-
-
     }
 
     @override
@@ -143,12 +141,10 @@
       return Container(
         child: Stack(
           children: <Widget>[
-//            Positioned.fill(
-//              child: CacheImageComponent(
-//                  imgUrl: video.thumbnail, boxFit: BoxFit.fill),
-//            ),
-
-
+            Positioned.fill(
+              child: CacheImageComponent(
+                  imgUrl: video.thumbnail, boxFit: BoxFit.fill),
+            ),
             //毛玻璃
             Positioned(
                 child: BackdropFilter(
